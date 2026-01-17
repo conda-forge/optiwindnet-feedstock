@@ -1,5 +1,5 @@
 context:
-  version: 0.1.5
+  version: 0.1.6
   python_min: 3.11
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/o/optiwindnet/optiwindnet-${{ version }}.tar.gz
-  sha256: ba92139403b5ac05a91e9295d12108233ca04b9523351657bf3d6d1ac386ecf5
+  sha256: 515fa86d0895276e665f44cbf50d8faba94162f1e633894cbe7b4bd33323028d
 
 build:
   number: 0
