@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/o/optiwindnet/optiwindnet-${{ version }}.tar.gz
-  sha256: 515fa86d0895276e665f44cbf50d8faba94162f1e633894cbe7b4bd33323028d
+  sha256: 6964334ced400dbd9863cb6b4fdc3e0f60cbe0077dda7ceb58ca92c39fe408e0
 
 build:
   number: 0
