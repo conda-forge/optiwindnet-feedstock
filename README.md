@@ -155,6 +155,3 @@ Feedstock Maintainers
 * [@mdealencar](https://github.com/mdealencar/)
 * [@simutisernestas](https://github.com/simutisernestas/)
 
-
-<!-- dummy commit to enable rerendering -->
-
