@@ -28,14 +28,13 @@ requirements:
     - condeltri >=0.0.3
     - darkdetect >=0.8.0
     - esy.osm.pbf >=0.1.1
-    - hybgensea >=0.0.1
+    - hybgensea >=0.1.1
     - makefun >=1.15.6
     - matplotlib-base >=3.10.1
     - networkx >=3.6
     - numba >=0.62.1
     - numpy >=2.0
-    - pony >=0.7.18
-    - py >=1.11.0
+    - peewee >=3.17
     - pyomo >=6.9.5
     - pyyaml >=6.0.2
     - scipy >=1.15.2
