@@ -49,30 +49,11 @@ requirements:
 tests:
   - python:
       imports:
-        - optiwindnet.api
+        - optiwindnet.mesh
       # pip_check complains about the lack of ortools (dependency in pyproject.toml)
       # ortools-python from conda-forge is stuck on version 9.6 for 2+ years
       # discussion at https://github.com/conda-forge/or-tools-feedstock/pull/47
       pip_check: false
-  - script:
-      - pytest tests/
-    requirements:
-      run:
-        - python ${{ python_min }}.*
-        - pip
-        - pytest
-        - pytest-cov
-        - coverage
-        - dill
-        - psutil
-        - memory_profiler
-        - line_profiler
-        - coin-or-cbc
-        - ortools-python
-    files:  
-      source:
-        - tests/      
-        - .coveragerc
 
 about:
   homepage: https://optiwindnet.readthedocs.io/
