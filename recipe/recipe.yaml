@@ -44,7 +44,7 @@ requirements:
     - shapely >=2.0.7
     - svg.py >=1.6.0
     - utm >=0.7.0
-    - ortools
+    - highspy
 
 tests:
   - python:
@@ -69,6 +69,7 @@ tests:
         - line_profiler
         - coin-or-cbc
         - pyscipopt
+        - ortools-python
     files:  
       source:
         - tests/      
