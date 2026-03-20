@@ -68,7 +68,6 @@ tests:
         - memory_profiler
         - line_profiler
         - coin-or-cbc
-        - pyscipopt
         - ortools-python
     files:  
       source:
