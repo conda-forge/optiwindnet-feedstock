@@ -62,7 +62,7 @@ tests:
       pip_check: false
   - script:
       # skip Router test because it needs ortools
-      - pytest -k "not Router" tests/
+      - pytest -k "not (test_wfn_all_routers or test_router_variants)" tests/
     requirements:
       run:
         - python ${{ python_min }}.*
