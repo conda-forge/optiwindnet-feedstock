@@ -44,13 +44,7 @@ requirements:
     - shapely >=2.0.7
     - svg.py >=1.6.0
     - utm >=0.7.0
-    # include one default solver:
-    # >> ortools preferred, but conda version lagging behind and lacks win-64
-    # - ortools-python >=9.6
-    # >> coin-or-cbc would be ok, but win-64 version is single-threaded
-    # - coin-or-cbc >=2.10.12
-    # >> highspy is (as of Nov/2025) the best performing free single-threaded solver
-    - highspy >=1.12
+    - ortools
 
 tests:
   - python:
@@ -61,8 +55,7 @@ tests:
       # discussion at https://github.com/conda-forge/or-tools-feedstock/pull/47
       pip_check: false
   - script:
-      # skip Router test because it needs ortools
-      - pytest -k "not (test_wfn_all_routers or test_router_variants)" tests/
+      - pytest tests/
     requirements:
       run:
         - python ${{ python_min }}.*
