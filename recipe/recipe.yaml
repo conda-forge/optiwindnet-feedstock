@@ -61,7 +61,8 @@ tests:
       # discussion at https://github.com/conda-forge/or-tools-feedstock/pull/47
       pip_check: false
   - script:
-      - pytest tests/
+      # skip Router test because it needs ortools
+      - pytest -k "not Router" tests/
     requirements:
       run:
         - python ${{ python_min }}.*
