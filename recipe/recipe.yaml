@@ -1,6 +1,6 @@
 context:
-  version: "0.0.6"
-  python_min: "3.10"
+  version: "0.2.1"
+  python_min: "3.11"
 
 package:
   name: optiwindnet
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/o/optiwindnet/optiwindnet-${{ version }}.tar.gz
-  sha256: 90ad6836fc60e08d65c3d8dbb49e369cd7f048163c5229f3782bca80fb72cc87
+  sha256: c573a79aa02634c9704ed8388f63ae6268282a49e6811a2f4b81b9d30bca6387
 
 build:
   number: 0
@@ -23,37 +23,54 @@ requirements:
     - setuptools-scm >=8
   run:
     - python >=${{ python_min }}
-    - backports.strenum >=1.3.1
     - bidict >=0.23.1
     - bitarray >=3.4.2
-    - condeltri >=0.0.2
+    - condeltri >=0.0.3
     - darkdetect >=0.8.0
     - esy.osm.pbf >=0.1.1
-    - hybgensea >=0.0.1
+    - hybgensea >=0.1.1
     - makefun >=1.15.6
     - matplotlib-base >=3.10.1
-    - networkx >=3.4.2
-    - numba >=0.60
-    - numpy >=2.0,<2.3
-    - pony >=0.7.18
-    - py >=1.11.0
-    - pyomo >=6.9
+    - networkx >=3.6
+    - numba >=0.62.1
+    - numpy >=2.0
+    - peewee >=3.17
+    - pyomo >=6.9.5
     - pyyaml >=6.0.2
     - pyyaml-include >=2.1
     - scipy >=1.15.2
     - shapely >=2.0.7
     - svg.py >=1.6.0
     - utm >=0.7.0
-    - highspy
+    - highspy >=1.12
 
 tests:
   - python:
       imports:
-        - optiwindnet.mesh
+        - optiwindnet.api
       # pip_check complains about the lack of ortools (dependency in pyproject.toml)
       # ortools-python from conda-forge is stuck on version 9.6 for 2+ years
       # discussion at https://github.com/conda-forge/or-tools-feedstock/pull/47
       pip_check: false
+  - script:
+      - pytest tests/ --ignore=tests/test_MILP.py
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+        - pytest
+        - pytest-cov
+        - coverage
+        - psutil
+        - memory_profiler
+        - line_profiler
+        - coin-or-cbc
+        - pyscipopt
+    files:  
+      source:
+        - tests/
+        - optiwindnet/data/
+        - .coveragerc
 
 about:
   homepage: https://optiwindnet.readthedocs.io/
