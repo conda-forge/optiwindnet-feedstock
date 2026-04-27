@@ -1,6 +1,6 @@
 context:
   version: "0.2.1"
-  python_min: "3.10"
+  python_min: "3.11"
 
 package:
   name: optiwindnet
@@ -23,37 +23,53 @@ requirements:
     - setuptools-scm >=8
   run:
     - python >=${{ python_min }}
-    - backports.strenum >=1.3.1
     - bidict >=0.23.1
     - bitarray >=3.4.2
-    - condeltri >=0.0.2
+    - condeltri >=0.0.3
     - darkdetect >=0.8.0
     - esy.osm.pbf >=0.1.1
-    - hybgensea >=0.0.1
+    - hybgensea >=0.1.1
     - makefun >=1.15.6
     - matplotlib-base >=3.10.1
-    - networkx >=3.4.2
-    - numba >=0.60
-    - numpy >=2.0,<2.3
-    - pony >=0.7.18
-    - py >=1.11.0
-    - pyomo >=6.9
+    - networkx >=3.6
+    - numba >=0.62.1
+    - numpy >=2.0
+    - peewee >=3.17
+    - pyomo >=6.9.5
     - pyyaml >=6.0.2
     - pyyaml-include >=2.1
     - scipy >=1.15.2
     - shapely >=2.0.7
     - svg.py >=1.6.0
     - utm >=0.7.0
-    - highspy
+    - highspy >=1.12
 
 tests:
   - python:
       imports:
-        - optiwindnet.mesh
+        - optiwindnet.api
       # pip_check complains about the lack of ortools (dependency in pyproject.toml)
       # ortools-python from conda-forge is stuck on version 9.6 for 2+ years
       # discussion at https://github.com/conda-forge/or-tools-feedstock/pull/47
       pip_check: false
+  - script:
+      - pytest tests/
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+        - pytest
+        - pytest-cov
+        - coverage
+        - psutil
+        - memory_profiler
+        - line_profiler
+        - coin-or-cbc
+        - pyscipopt
+    files:  
+      source:
+        - tests/      
+        - .coveragerc
 
 about:
   homepage: https://optiwindnet.readthedocs.io/
