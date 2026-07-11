@@ -1,5 +1,5 @@
 context:
-  version: "0.2.2"
+  version: "0.2.3"
   python_min: "3.11"
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/o/optiwindnet/optiwindnet-${{ version }}.tar.gz
-  sha256: 313b8f6c729c8ac77438cd1e12921ccdb696516f287159ea91657163a3d95893
+  sha256: 55fea0d621bd42c50cfe996934b07a08de9ab3a344433054225fb50bbb91a5cc
 
 build:
   number: 0
@@ -66,7 +66,7 @@ tests:
         - line_profiler
         - coin-or-cbc
         - pyscipopt
-    files:  
+    files:
       source:
         - tests/
         - optiwindnet/data/
