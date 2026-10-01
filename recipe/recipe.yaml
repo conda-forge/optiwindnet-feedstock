@@ -43,6 +43,7 @@ requirements:
     - svg.py >=1.6.0
     - utm >=0.7.0
     - highspy >=1.12
+    - python-xxhash >=3.5.0
 
 tests:
   - python:
