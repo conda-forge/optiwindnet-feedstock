@@ -1,6 +1,5 @@
 context:
   version: "0.3.2"
-  python_min: "3.11"
 
 package:
   name: optiwindnet
@@ -46,6 +45,9 @@ requirements:
 
 tests:
   - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - optiwindnet.api
       # pip_check complains about the lack of ortools (dependency in pyproject.toml)
