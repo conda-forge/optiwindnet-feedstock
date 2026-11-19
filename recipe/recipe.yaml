@@ -25,10 +25,9 @@ requirements:
     - python >=${{ python_min }}
     - bidict >=0.23.1
     - bitarray >=3.4.2
-    - condeltri >=0.0.6
     - darkdetect >=0.8.0
     - esy.osm.pbf >=0.1.1
-    - hybgensea >=0.1.1
+    - hybgensea >=0.2.0
     - makefun >=1.15.6
     - matplotlib-base >=3.10.1
     - networkx >=3.6
@@ -36,8 +35,8 @@ requirements:
     - numpy >=2.0
     - peewee >=3.17.9
     - pyomo >=6.9.5
+    - pythoncdt >=2.0.0
     - pyyaml >=6.0.2
-    - pyyaml-include >=2.1
     - scipy >=1.15.2
     - shapely >=2.0.7
     - svg.py >=1.6.0
